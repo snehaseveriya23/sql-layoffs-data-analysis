@@ -165,7 +165,24 @@ The next phase of this project will include:
 - Trend analysis
 
 ---
+## 📊 Exploratory Data Analysis (EDA)
 
+The second SQL script explores the cleaned dataset to uncover trends and insights.
+
+The analysis includes:
+
+- Maximum layoffs and layoff percentages
+- Companies with the highest layoffs
+- Industry-wise layoffs
+- Country-wise layoffs
+- Year-wise layoffs
+- India-specific layoff analysis
+- Stage-wise layoffs
+- Monthly layoff trends
+- Rolling monthly total of layoffs
+- Top 5 companies by layoffs for each year using `DENSE_RANK()`
+
+---
 ## 👩‍💻 Author
 
 **Sneha Severiya**
