@@ -1,12 +1,35 @@
-# 🧹 SQL Layoffs Data Analysis
+# 🧹 World Layoffs Data Cleaning Using SQL
 
-This project demonstrates the process of cleaning the **World Layoffs** dataset using **MySQL**. The objective is to transform raw data into a clean, consistent, and analysis-ready dataset by applying various SQL data cleaning techniques.
+A SQL project that focuses on cleaning and preparing the **World Layoffs** dataset for analysis. This project demonstrates essential data cleaning techniques using **MySQL**, transforming raw data into a clean and analysis-ready dataset.
 
 ---
 
-## 📌 Project Overview
+## 📖 About the Project
 
-Real-world datasets often contain duplicate records, missing values, inconsistent formatting, and incorrect data types. In this project, SQL was used to clean the World Layoffs dataset and prepare it for further analysis.
+Real-world datasets are rarely clean. They often contain duplicate records, inconsistent values, missing information, and incorrect data types.
+
+In this project, I cleaned the World Layoffs dataset using SQL by following a structured data cleaning workflow, making it suitable for future Exploratory Data Analysis (EDA) and business insights.
+
+---
+
+## 🎯 Project Objectives
+
+- Create a staging table to preserve the original dataset
+- Identify and remove duplicate records
+- Standardize inconsistent text values
+- Convert date values into the correct format
+- Handle missing and blank values
+- Remove unnecessary records
+- Prepare a clean dataset for analysis
+
+---
+
+## 🛠️ Tools & Technologies
+
+- MySQL
+- MySQL Workbench
+- Git
+- GitHub
 
 ---
 
@@ -14,45 +37,35 @@ Real-world datasets often contain duplicate records, missing values, inconsisten
 
 - **Dataset:** World Layoffs
 - **Source:** Kaggle
-- **Database:** MySQL
-- **Tool Used:** MySQL Workbench
+- **Format:** CSV
 
 ---
 
-## 🎯 Objectives
+## 🧹 Data Cleaning Workflow
 
-- Create a staging table to preserve the original data.
-- Identify and remove duplicate records.
-- Standardize inconsistent values.
-- Convert date values into the proper format.
-- Handle missing and blank values.
-- Prepare a clean dataset for Exploratory Data Analysis (EDA).
+The following steps were performed during the cleaning process:
 
----
+### ✅ 1. Created a Staging Table
+Created a copy of the original dataset to ensure the raw data remained unchanged.
 
-## 🛠 Technologies Used
+### ✅ 2. Removed Duplicate Records
+Used the `ROW_NUMBER()` window function along with Common Table Expressions (CTEs) to identify and remove duplicate rows.
 
-- MySQL
-- MySQL Workbench
-- Git & GitHub
+### ✅ 3. Standardized Data
+- Trimmed unnecessary spaces
+- Fixed inconsistent company and country names
+- Standardized text formatting
 
----
+### ✅ 4. Converted Date Format
+Converted the `date` column into MySQL's `DATE` datatype using `STR_TO_DATE()`.
 
-## 🧹 Data Cleaning Steps
+### ✅ 5. Handled Missing Values
+- Replaced blank values with `NULL`
+- Filled missing `industry` values using self joins
+- Removed rows that contained insufficient information
 
-The following data cleaning operations were performed:
-
-- Created a staging table.
-- Copied raw data into the staging table.
-- Identified duplicate records using `ROW_NUMBER()`.
-- Removed duplicate rows.
-- Standardized company names using `TRIM()`.
-- Standardized country names.
-- Converted the `date` column into the `DATE` datatype.
-- Replaced blank values with `NULL`.
-- Filled missing `industry` values using a self-join.
-- Removed unnecessary records with insufficient data.
-- Dropped helper columns used during cleaning.
+### ✅ 6. Final Data Validation
+Verified that the cleaned dataset was consistent and ready for analysis.
 
 ---
 
@@ -65,57 +78,91 @@ The following data cleaning operations were performed:
 - ALTER TABLE
 - CTE (Common Table Expression)
 - ROW_NUMBER()
+- Window Functions
 - PARTITION BY
-- JOIN
-- CASE
+- SELF JOIN
 - TRIM()
 - STR_TO_DATE()
 - IS NULL
-- Window Functions
+- CASE Statements
 
 ---
 
 ## 📁 Repository Structure
 
 ```
-sql-layoffs-data-analysis/
+sql-layoffs-data-analysis
 │
-├── dataset/
+├── dataset
 │   └── layoffs.csv
 │
-├── sql/
+├── sql
 │   └── 01_data_cleaning.sql
 │
-├── screenshots/
+├── screenshots
 │   ├── 01_original_dataset.png
 │   ├── 02_duplicate_rows.png
 │   ├── 03_standardize_data.png
-│   └── 04_final_cleaned_dataset.png
+│   ├── 04_handle_missing_values.png
+│   └── 05_final_cleaned_dataset.png
 │
 ├── README.md
 └── LICENSE
 ```
----
-
-## 🚀 Future Improvements
-
-- Perform Exploratory Data Analysis (EDA)
-- Generate business insights using SQL
-- Add advanced SQL queries for trend analysis
 
 ---
 
-## 📚 Key Learning Outcomes
+# 📸 Project Screenshots
 
-Through this project, I strengthened my understanding of:
+## Original Dataset
 
-- SQL Data Cleaning
-- Window Functions
-- Common Table Expressions (CTEs)
-- Data Standardization
-- Handling Missing Values
-- SQL Best Practices
-- Preparing data for analysis
+![Original Dataset](screenshots/01_original_dataset.png)
+
+---
+
+## Identifying Duplicate Records
+
+![Duplicate Records](screenshots/02_duplicate_rows.png)
+
+---
+
+## Standardizing Data
+
+![Standardizing Data](screenshots/03_standardize_data.png)
+
+---
+
+## Handling Missing Values
+
+![Missing Values](screenshots/04_handle_missing_values.png)
+
+---
+
+## Final Cleaned Dataset
+
+![Final Cleaned Dataset](screenshots/05_final_cleaned_dataset.png)
+
+---
+
+## 📈 Results
+
+After completing the cleaning process, the dataset was:
+
+- Free from duplicate records
+- Standardized and consistent
+- Properly formatted
+- Cleaned of unnecessary NULL values
+- Ready for Exploratory Data Analysis (EDA)
+
+---
+
+## 🚀 Next Steps
+
+The next phase of this project will include:
+
+- Exploratory Data Analysis (EDA)
+- SQL-based business insights
+- Trend analysis
 
 ---
 
@@ -123,9 +170,9 @@ Through this project, I strengthened my understanding of:
 
 **Sneha Severiya**
 
-- GitHub: https://github.com/snehaseveriya23
-- LinkedIn: https://www.linkedin.com/in/sneha-severiya-205203376
+- 🔗 GitHub: https://github.com/snehaseveriya23
+- 🔗 LinkedIn: https://www.linkedin.com/in/sneha-severiya-205203376
 
 ---
 
-⭐ If you found this project useful, consider giving it a star!
+⭐ If you found this project interesting, feel free to star this repository!
